@@ -51,6 +51,14 @@ class CustomerTest < ActiveSupport::TestCase
     assert_equal 11, customer.visit_count
   end
 
+  test "cannot have an invalid email" do
+
+    customer = get_customer_without :email
+    customer.email = "john.doe"
+    assert_not customer.save
+
+  end
+
   private
   def get_customer_without attr
 
