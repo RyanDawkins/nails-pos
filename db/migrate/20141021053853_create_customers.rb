@@ -5,7 +5,7 @@ class CreateCustomers < ActiveRecord::Migration
       t.string :last_name
       t.string :email
       t.string :phone_number
-      t.int :visit_count
+      t.integer :visit_count
 
       t.timestamps
     end
