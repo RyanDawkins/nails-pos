@@ -52,10 +52,16 @@ class CustomerTest < ActiveSupport::TestCase
   end
 
   test "cannot have an invalid email" do
-
     customer = get_customer_without :email
     customer.email = "john.doe"
     assert_not customer.save
+  end
+
+  test "can have valid email" do
+
+    customer = get_customer_without :email
+    customer.email = "ryan.dawkins@gmail.com"
+    assert customer.save
 
   end
 
