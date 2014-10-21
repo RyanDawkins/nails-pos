@@ -23,6 +23,17 @@ class CustomerTest < ActiveSupport::TestCase
 
   end
 
+  test "increments by one" do
+
+    customer = get_customer_without :visit_count
+    customer.visit_count = 0
+
+    customer.increment_visit
+
+    assert_equal customer.visit_count, 1
+
+  end
+
   private
   def get_customer_without attr
 
