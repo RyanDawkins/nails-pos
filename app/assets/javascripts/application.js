@@ -12,5 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+//= require angular
+//= require bootstrap
+//= require bootstrap-sprockets
+//= require plugins/metisMenu/metisMenu.min.js
+//= require sb-admin-2.js
+//= require_self
+//= require site.js
