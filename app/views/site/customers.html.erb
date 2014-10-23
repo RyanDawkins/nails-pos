@@ -6,7 +6,7 @@
       </div>
 
       <p ng-hide="isCreating">
-        <a ng-click="createCustomer()" id="create-customer-btn" class="btn btn-success"><i class="fa fa-plus"></i> Create Customer</a>
+        <a ng-click="showCustomerForm(false)" id="create-customer-btn" class="btn btn-success"><i class="fa fa-plus"></i> Create Customer</a>
       </p>
 
       <form ng-show="isCreating" role="form">
@@ -26,13 +26,15 @@
           <label for="new-customer-phone-number">Phone Number</label>
           <input ng-model="newCustomer.phone_number" type="tel" class="form-control" id="new-customer-phone-number" placeholder="(405) 867-5309">
         </div>
-        <button ng-click="saveCustomer()" class="btn btn-primary" type="submit"><i class="fa fa-save"></i> Save</button>
+        <button ng-hide="editing" ng-click="createCustomer()" class="btn btn-success" type="submit"><i class="fa fa-plus"></i> Create</button>
+        <button ng-show="editing" ng-click="editCustomer()" class="btn btn-primary" type="submit"><i class="fa fa-save"></i> Save</button>
         <a ng-click="toggleCreating()" class="btn btn-default">Back</a>
       </form>
 
       <table ng-hide="isCreating" ng-init="loadTable()" class="table table-bordered">
         <thead>
           <tr>
+            <td></td>
             <td>First Name</td>
             <td>Last Name</td>
             <td>Email</td>
@@ -40,6 +42,7 @@
             <td>Visit Count</td>
           </tr>
           <tr>
+            <td></td>
             <td>
               <input type="text" placeholder="John">
             </td>
@@ -59,6 +62,10 @@
         </thead>
         <tbody ng-repeat="customer in customers">
           <tr>
+            <td>
+              <a ng-click="delete(customer)" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i></a>
+              <a ng-click="showCustomerForm(customer)" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></a>
+            </td>
             <td>{{customer.first_name}}</td>
             <td>{{customer.last_name}}</td>
             <td>{{customer.email}}</td>

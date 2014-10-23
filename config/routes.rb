@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   post 'customer/:id/update' => "customer#update"
 
-  get 'customer/delete' => "customer#delete"
+  get 'customer/:id/delete' => "customer#delete"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
