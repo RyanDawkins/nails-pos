@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'employee/' => 'employee#index'
+
+  get 'employee/:id' => 'employee#show'
+
+  post 'employee/create' => 'employee#create'
+
+  post 'employee/:id/update' => 'employee#update'
+
+  get 'employee/:id/delete' => 'employee#delete'
+
   get 'site/index'
 
   get 'customers' => 'site#customers'
