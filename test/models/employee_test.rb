@@ -17,9 +17,27 @@ class EmployeeTest < ActiveSupport::TestCase
     assert_not employee.save
   end
 
-  test "cannot save without role" do
+  test "can save blank role" do
     employee = get_without :role
+    assert employee.save
+  end
+
+  test "can only save integer role" do
+    employee = get_without :role
+    employee.role = "bob"
     assert_not employee.save
+  end
+
+  test "cannot save as an integer 0" do
+    employee = get_without :role
+    employee.role = 0
+    assert_not employee.save
+  end
+
+  test "can save numbers greater than 0" do
+    employee = get_without :role
+    employee.role = 1
+    assert employee.save
   end
 
   private
