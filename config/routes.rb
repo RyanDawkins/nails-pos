@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'role/' => 'role#index'
+
+  get 'role/:id' => 'role#show'
+
+  post 'role/create' => 'role#create'
+
+  post 'role/:id/update' => 'role#update'
+
+  get 'role/:id/delete' => 'role#delete'
+
   get 'employee/' => 'employee#index'
 
   get 'employee/:id' => 'employee#show'
