@@ -18,4 +18,4 @@
 //= require plugins/metisMenu/metisMenu.min.js
 //= require sb-admin-2.js
 //= require_self
-//= require site.js
+//= require site/customer.js
