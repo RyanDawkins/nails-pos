@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
   get 'site/index'
 
+  get 'employees' => 'site#employees'
+
   get 'customers' => 'site#customers'
 
   get 'customer/' => "customer#index"

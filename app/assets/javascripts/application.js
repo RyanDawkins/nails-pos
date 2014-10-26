@@ -19,3 +19,4 @@
 //= require sb-admin-2.js
 //= require_self
 //= require site/customer.js
+//= require site/employee.js

@@ -7,4 +7,9 @@ class SiteController < ApplicationController
   def customers
     flash[:controller] = :customers
   end
+
+  def employees
+    flash[:controller] = :employees
+  end
+
 end
