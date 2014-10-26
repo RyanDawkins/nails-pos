@@ -71,7 +71,12 @@
                         </li>
                         <li>
                             <a class="<%= render plain: (flash[:controller] == :customers ? 'active' : '') %>" href="/customers">
-                              <i class="fa fa-edit fa-fw"></i> Customers
+                              <i class="fa fa-group fa-fw"></i> Customers
+                            </a>
+                        </li>
+                        <li>
+                            <a class="<%= render plain: (flash[:controller] == :employees ? 'active' : '') %>" href="/employees">
+                              <i class="fa fa-coffee fa-fw"></i> Employees
                             </a>
                         </li>
                     </ul>
