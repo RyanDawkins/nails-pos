@@ -18,25 +18,25 @@ class EmployeeTest < ActiveSupport::TestCase
   end
 
   test "can save blank role" do
-    employee = get_without :role
+    employee = get_without :role_id
     assert employee.save
   end
 
   test "can only save integer role" do
-    employee = get_without :role
-    employee.role = "bob"
+    employee = get_without :role_id
+    employee.role_id = "bob"
     assert_not employee.save
   end
 
   test "cannot save as an integer 0" do
-    employee = get_without :role
-    employee.role = 0
+    employee = get_without :role_id
+    employee.role_id = 0
     assert_not employee.save
   end
 
   test "can save numbers greater than 0" do
-    employee = get_without :role
-    employee.role = 1
+    employee = get_without :role_id
+    employee.role_id = 1
     assert employee.save
   end
 
@@ -50,8 +50,8 @@ class EmployeeTest < ActiveSupport::TestCase
     if not attr == :last_name
       employee.last_name = "Doe"
     end
-    if not attr == :role
-      employee.role = 1
+    if not attr == :role_id
+      employee.role_id = 1
     end
     return employee
   end
