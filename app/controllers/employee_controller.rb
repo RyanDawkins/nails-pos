@@ -1,7 +1,5 @@
 class EmployeeController < RestController
-
-  has_one :role
-
+  
   private
   def get_class
     Employee
