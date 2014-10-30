@@ -12,8 +12,26 @@ class AppointmentTest < ActiveSupport::TestCase
     assert_not appointment.save
   end
 
+  test "can't save customer_id with a string" do
+    appointment = get_without :customer_id
+    appointment.customer_id = "Bob"
+    assert_not appointment.save
+  end
+
+  test "can't save customer_id with a < 1 integer" do
+    appointment = get_without :customer_id
+    appointment.customer_id = 0
+    assert_not appointment.save
+  end
+
   test "can't save without datetime" do
     appointment = get_without :date
+    assert_not appointment.save
+  end
+
+  test "can't save invalid date" do
+    appointment = get_without :date
+    appointment.date = "bob"
     assert_not appointment.save
   end
 
