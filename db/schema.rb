@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141026184712) do
+ActiveRecord::Schema.define(version: 20141030060014) do
+
+  create_table "appointments", force: true do |t|
+    t.integer  "customer_id"
+    t.datetime "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "customers", force: true do |t|
     t.string   "first_name"
@@ -33,6 +40,13 @@ ActiveRecord::Schema.define(version: 20141026184712) do
 
   create_table "roles", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "services", force: true do |t|
+    t.string   "name"
+    t.decimal  "cost",       precision: 10, scale: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
