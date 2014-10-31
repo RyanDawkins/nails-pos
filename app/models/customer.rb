@@ -1,5 +1,7 @@
 class Customer < ActiveRecord::Base
 
+  has_many :appointment
+
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }

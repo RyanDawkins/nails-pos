@@ -24,6 +24,23 @@ class AppointmentTest < ActiveSupport::TestCase
     assert_not appointment.save
   end
 
+  test "can't save employee_id < 1" do
+    appointment = get_without :employee_id
+    appointment.employee_id = 0
+    assert_not appointment.save
+  end
+
+  test "can't save employee_id as a string" do
+    appointment = get_without :employee_id
+    appointment.employee_id = "bob"
+    assert_not appointment.save
+  end
+
+  test "can't save without employee_id" do
+    appointment = get_without :employee_id
+    assert_not appointment.save
+  end
+
   test "can't save without datetime" do
     appointment = get_without :date
     assert_not appointment.save
@@ -45,6 +62,10 @@ class AppointmentTest < ActiveSupport::TestCase
 
     if attr == :date
       appointment.date = DateTime.now
+    end
+
+    if attr == :employee_id
+      appointment.employee_id = 1
     end
 
     appointment
