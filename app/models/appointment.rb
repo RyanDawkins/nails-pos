@@ -4,11 +4,12 @@ class Appointment < ActiveRecord::Base
 
   validates :customer_id, presence: true, :numericality => {
     :only_integer => true,
+    :allow_blank => false,
     :greater_than => 0
     }
   validates :employee_id, :numericality => {
     :only_integer => true,
-    :allow_blank => true,
+    :allow_blank => false,
     :greater_than => 0
     }
 
