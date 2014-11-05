@@ -1,6 +1,7 @@
 class Employee < ActiveRecord::Base
 
   belongs_to :role
+  has_many :appointment
 
   validates :first_name, presence: true
   validates :last_name, presence: true
