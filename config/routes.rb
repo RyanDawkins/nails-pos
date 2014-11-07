@@ -27,6 +27,13 @@ Rails.application.routes.draw do
   post 'appointment/:id/update' => 'appointment#update'
   get 'appointment/:id/delete' => 'appointment#delete'
 
+  #schedule
+  get 'schedule/' => 'schedule#index'
+  get 'schedule/:id' => 'schedule#show'
+  post 'schedule/create' => 'schedule#create'
+  post 'schedule/:id/update' => 'schedule#update'
+  get 'schedule/:id/delete' => 'schedule#delete'
+
   get 'site/index'
 
   get 'employees' => 'site#employees'
