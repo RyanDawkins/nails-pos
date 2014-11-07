@@ -34,11 +34,11 @@ class ServiceTest < ActiveSupport::TestCase
 
     service = Service.new
 
-    if attr == :name
+    unless attr == :name
       service.name = "Pedicure"
     end
 
-    if attr == :cost
+    unless attr == :cost
       service.cost = 10.99
     end
 
