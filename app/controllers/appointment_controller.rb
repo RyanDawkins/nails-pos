@@ -1,4 +1,4 @@
-class AppointmentController < ApplicationController
+class AppointmentController < RestController
 
   private
   def get_class
