@@ -21,7 +21,7 @@ class ScheduleTest < ActiveSupport::TestCase
     assert_not schedule.save
   end
 
-  test "can't save customer_id with a < 1 integer" do
+  test "can't save appointment_id with a < 1 integer" do
     schedule = get_without :appointment_id
     schedule.appointment_id = 0
     assert_not schedule.save
