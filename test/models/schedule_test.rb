@@ -40,7 +40,7 @@ class ScheduleTest < ActiveSupport::TestCase
 
   test "can't save service_id with a < 1 integer" do
     schedule = get_without :service_id
-    schedule.appointment_id = 0
+    schedule.service_id = 0
     assert_not schedule.save
   end
 
