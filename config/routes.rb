@@ -20,6 +20,13 @@ Rails.application.routes.draw do
 
   get 'employee/:id/delete' => 'employee#delete'
 
+  #appointment
+  get 'appointment/' => 'appointment#index'
+  get 'appointment/:id' => 'appointment#show'
+  post 'appointment/create' => 'appointment#create'
+  post 'appointment/:id/update' => 'appointment#update'
+  get 'appointment/:id/delete' => 'appointment#delete'
+
   get 'site/index'
 
   get 'employees' => 'site#employees'
