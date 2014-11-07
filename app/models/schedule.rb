@@ -10,7 +10,8 @@ class Schedule < ActiveRecord::Base
     :greater_than => 0
   }
 
-  validates :cost, presence: true
+  validates :cost, presence: true,
+    :format => { :with => /\A\d+(?:\.\d{0,2})?\z/ }
 
   validates :name, presence: true
 
