@@ -1,4 +1,5 @@
 [![Code Climate](https://codeclimate.com/github/RyanDawkins/nails-pos/badges/gpa.svg)](https://codeclimate.com/github/RyanDawkins/nails-pos)
+[![Travis CI](https://travis-ci.org/RyanDawkins/nails-pos.svg?branch=master)](https://travis-ci.org/RyanDawkins/nails-pos)
 
 # Nails Point of Sale Application
 This application is under the [MIT License](http://opensource.org/licenses/MIT) or you can look at LICENSE.md
