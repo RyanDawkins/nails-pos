@@ -6,11 +6,10 @@ env:
   - DB=mysql
   - DB=postgresql
 script:
+  - RAILS_ENV=test bundle exec rake db:create --trace
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare
   - bundle exec rake
 before_script:
   - rm config/database.yml
   - cp config/database.travis.yml config/database.yml
-  - mysql -e 'create database nails-pos;'
-  - psql -c 'create database nails-pos' -U postgres
