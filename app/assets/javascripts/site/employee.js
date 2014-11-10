@@ -1,3 +1,4 @@
+/* global app */
 app.controller("EmployeeTableController", function($scope, $http){
 
   $scope.employees = [];
@@ -7,9 +8,13 @@ app.controller("EmployeeTableController", function($scope, $http){
 
   var loadTable = function() {
     $http.get('/employee').
-      success(function(data, status, headers, config) {
+
+
+    /*jshint unused:strict */
+    success(function(data, status, headers, config) {
         $scope.employees = data;
     }).
+    /*jshint unused:strict */
     error(function(data, status, headers, config) {
       // called asynchronously if an error occurs
       // or server returns response with an error status.
@@ -38,10 +43,12 @@ app.controller("EmployeeTableController", function($scope, $http){
     var employee = $scope.newEmployee;
     $scope.newEmployee = {};
     $http.post('/employee/create', employee).
-      success(function(data, status, headers, config) {
+    /*jshint unused:strict */
+    success(function(data, status, headers, config) {
         loadTable();
         toggleCreating();
     }).
+    /*jshint unused:strict */
     error(function(data, status, headers, config) {});
   };
 
@@ -49,18 +56,22 @@ app.controller("EmployeeTableController", function($scope, $http){
     var employee = $scope.newEmployee;
     $scope.newEmployee = {};
     $http.post('/employee/'+employee.id+"/update", employee).
-      success(function(data, status, headers, config) {
+    /*jshint unused:strict */
+    success(function(data, status, headers, config) {
         loadTable();
         toggleCreating();
     }).
+    /*jshint unused:strict */
     error(function(data, status, headers, config) {});
   };
 
   $scope.delete = function(employee) {
     $http.get('/employee/'+employee.id+'/delete').
-      success(function(data, status, headers, config) {
+    /*jshint unused:strict */
+    success(function(data, status, headers, config) {
         loadTable();
     }).
+    /*jshint unused:strict */
     error(function(data, status, headers, config) {});
   };
 
