@@ -6,7 +6,8 @@ This application is under the [MIT License](http://opensource.org/licenses/MIT) 
 The purpose of this application is to be a scheduling assistant for nail salons.
 
   * Here's our Trello: https://trello.com/b/g1uyuywQ/nails-pos
-  * CodeClimate and Travis-ci coming soon!
+  * [Travis CI](https://travis-ci.org/RyanDawkins/nails-pos)
+  * [Code Climate](https://codeclimate.com/github/RyanDawkins/nails-pos)
 
 ## Dependencies
   * Ruby version: We use 2.0, so we recommend 2.0+
