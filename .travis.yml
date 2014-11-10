@@ -6,6 +6,7 @@ env:
   - DB=mysql
   - DB=postgresql
 script:
+  - CODECLIMATE_REPO_TOKEN=017f38748c39d06279463b4882f3bb407410e34c61f7a428f6578797cf0ac251
   - RAILS_ENV=test bundle exec rake db:create --trace
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare
