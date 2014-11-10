@@ -1,5 +1,3 @@
-var app = angular.module("CustomerApp", []);
-
 app.controller("CustomerTableController", function($scope, $http){
 
   $scope.customers = [];

@@ -1,5 +1,3 @@
-var app = angular.module("EmployeeApp", []);
-
 app.controller("EmployeeTableController", function($scope, $http){
 
   $scope.employees = [];

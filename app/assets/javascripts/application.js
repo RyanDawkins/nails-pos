@@ -21,3 +21,5 @@
 //= require site/customer.js
 //= require site/employee.js
 //= require site/schedule.js
+
+var app = angular.module("Nails-Pos", []);
