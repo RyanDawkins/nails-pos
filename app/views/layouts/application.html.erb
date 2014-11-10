@@ -79,6 +79,11 @@
                               <i class="fa fa-coffee fa-fw"></i> Employees
                             </a>
                         </li>
+                        <li>
+                            <a class="<%= render plain: (flash[:schedule] == :schedule ? 'active' : '') %>" href="/scheduler">
+                              <i class="fa fa-calendar fa-fw"></i> Scheduler
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

@@ -1,23 +1,29 @@
 Rails.application.routes.draw do
 
+  # The priority is based upon order of creation: first created -> highest priority.
+  # See how all your routes lay out with "rake routes".
+
+  # You can have the root of your site routed with "root"
+  root 'site#index'
+
+  # Site related stuff
+  # Actual HTML
+  get 'site/index'
+  get 'employees' => 'site#employees'
+  get 'customers' => 'site#customers'
+  get 'scheduler' => 'site#schedule'
+
+  # Api related
   get 'role/' => 'role#index'
-
   get 'role/:id' => 'role#show'
-
   post 'role/create' => 'role#create'
-
   post 'role/:id/update' => 'role#update'
-
   get 'role/:id/delete' => 'role#delete'
 
   get 'employee/' => 'employee#index'
-
   get 'employee/:id' => 'employee#show'
-
   post 'employee/create' => 'employee#create'
-
   post 'employee/:id/update' => 'employee#update'
-
   get 'employee/:id/delete' => 'employee#delete'
 
   #appointment
@@ -34,27 +40,12 @@ Rails.application.routes.draw do
   post 'schedule/:id/update' => 'schedule#update'
   get 'schedule/:id/delete' => 'schedule#delete'
 
-  get 'site/index'
-
-  get 'employees' => 'site#employees'
-
-  get 'customers' => 'site#customers'
-
+  #customer api stuff
   get 'customer/' => "customer#index"
-
   get 'customer/:id' => "customer#show"
-
   post 'customer/create' => "customer#create"
-
   post 'customer/:id/update' => "customer#update"
-
   get 'customer/:id/delete' => "customer#delete"
-
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  root 'site#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

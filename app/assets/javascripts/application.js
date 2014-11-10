@@ -20,3 +20,4 @@
 //= require_self
 //= require site/customer.js
 //= require site/employee.js
+//= require site/schedule.js

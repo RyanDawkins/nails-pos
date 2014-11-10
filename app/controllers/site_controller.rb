@@ -12,4 +12,8 @@ class SiteController < ApplicationController
     flash[:controller] = :employees
   end
 
+  def schedule
+    flash[:schedule] = :schedule
+  end
+
 end
