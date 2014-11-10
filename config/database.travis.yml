@@ -1,0 +1,32 @@
+# config/database.travis.yml
+sqlite: &sqlite
+  adapter: sqlite3
+  database: db/nails-pos.sqlite3
+
+mysql: &mysql
+  adapter: mysql2
+  username: root
+  password:
+  database: nails-pos
+
+postgresql: &postgresql
+  adapter: postgresql
+  username: postgres
+  password:
+  database: nails-pos
+  min_messages: ERROR
+
+defaults: &defaults
+  pool: 5
+  timeout: 5000
+  host: localhost
+  <<: *<%= ENV['DB'] || "postgresql" %>
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
