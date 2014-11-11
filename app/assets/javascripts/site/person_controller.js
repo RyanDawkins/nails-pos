@@ -10,14 +10,11 @@ app.controller("PersonTableController", function($scope, $http){
   $scope.editing = false;
 
   var loadTable = function() {
-    console.log('/'+config.url);
     $http.get('/'+config.url).
-    /*jshint unused:false */
-    success(function(data, status, headers, config) {
+    success(function(data) {
         $scope.persons = data;
     }).
-    /*jshint unused:false */
-    error(function(data, status, headers, config) {
+    error(function(data) {
       // called asynchronously if an error occurs
       // or server returns response with an error status.
       console.log(data);
@@ -45,36 +42,36 @@ app.controller("PersonTableController", function($scope, $http){
     var person = $scope.newPerson;
     $scope.newPerson = {};
     $http.post('/'+config.url+'/create', person).
-    /*jshint unused:false */
-    success(function(data, status, headers, config) {
-        loadTable();
-        toggleCreating();
+    success(function() {
+      loadTable();
+      toggleCreating();
     }).
-    /*jshint unused:false */
-    error(function(data, status, headers, config) {});
+    error(function(data) {
+      console.log(data);
+    });
   };
 
   $scope.editPerson = function() {
     var person = $scope.newPerson;
     $scope.newPerson = {};
     $http.post('/'+config.url+'/'+person.id+"/update", person).
-    /*jshint unused:false */
-    success(function(data, status, headers, config) {
-        loadTable();
-        toggleCreating();
+    success(function() {
+      loadTable();
+      toggleCreating();
     }).
-    /*jshint unused:false */
-    error(function(data, status, headers, config) {});
+    error(function(data) {
+      console.log(data);
+    });
   };
 
   $scope.delete = function(person) {
     $http.get('/'+config.url+'/'+person.id+'/delete').
-    /*jshint unused:false */
-    success(function(data, status, headers, config) {
+    success(function() {
         loadTable();
     }).
-    /*jshint unused:false */
-    error(function(data, status, headers, config) {});
+    error(function(data) {
+      console.log(data);
+    });
   };
 
   $scope.loadTable = loadTable;
