@@ -21,5 +21,5 @@
 //= require site/person_controller.js
 //= require site/schedule.js
 
-/* global angular, unused: false */
+/* global angular, jshint unused: false */
 var app = angular.module("Nails-Pos", []);
