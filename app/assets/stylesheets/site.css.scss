@@ -1,3 +1,20 @@
 // Place all the styles related to the site controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.table-square > thead > tr > td {
+  text-align: center;
+}
+
+.table-square > tbody > tr > td {
+  text-align: center;
+}
+.table-square > tbody > tr > td:hover {
+  background-color: cyan;
+}
+.table-square > thead > tr > td:hover > i {
+  display: block;
+}
+.table-square > thead > tr > td > i {
+  display: none;
+}
