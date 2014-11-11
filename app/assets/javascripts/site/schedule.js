@@ -1,17 +1,17 @@
 var resize = function() {
-  /* unused=false */
+  /* unused: false */
   $(".table-square > tbody > tr > td").each(function(event){
     $(this).height($(this).width() / 2);
   });
-}
+};
 
 
-/* unused=false */
+/* unused: false */
 $(document).ready(function(event){
   resize();
 });
 
-/* unused=false */
+/* unused: false */
 $(window).resize(function(event) {
   resize();
 });
