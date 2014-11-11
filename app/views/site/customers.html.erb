@@ -1,4 +1,4 @@
-<div ng-controller="CustomerTableController" class="container-fluid">
+<div id="controller-div" ng-controller="PersonTableController" config-url="customer" class="container-fluid">
   <div class="row-fluid">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <div id="help-message" class="jumbotron">
@@ -6,28 +6,28 @@
       </div>
 
       <p ng-hide="isCreating">
-        <a ng-click="showCustomerForm(false)" id="create-customer-btn" class="btn btn-success"><i class="fa fa-plus"></i> Create Customer</a>
+        <a ng-click="showPersonForm(false)" id="create-customer-btn" class="btn btn-success"><i class="fa fa-plus"></i> Create Customer</a>
       </p>
 
       <form ng-show="isCreating" role="form">
         <div class="form-group">
           <label for="new-customer-first-name">First Name</label>
-          <input ng-model="newCustomer.first_name" type="text" class="form-control" id="new-customer-first-name" placeholder="Jane">
+          <input ng-model="newPerson.first_name" type="text" class="form-control" id="new-customer-first-name" placeholder="Jane">
         </div>
         <div class="form-group">
           <label for="new-customer-last-name">Last Name</label>
-          <input ng-model="newCustomer.last_name" type="text" class="form-control" id="new-customer-last-name" placeholder="Doe">
+          <input ng-model="newPerson.last_name" type="text" class="form-control" id="new-customer-last-name" placeholder="Doe">
         </div>
         <div class="form-group">
           <label for="new-customer-email">Email</label>
-          <input ng-model="newCustomer.email" type="text" class="form-control" id="new-customer-email" placeholder="jane.doe@example.com">
+          <input ng-model="newPerson.email" type="text" class="form-control" id="new-customer-email" placeholder="jane.doe@example.com">
         </div>
         <div class="form-group">
           <label for="new-customer-phone-number">Phone Number</label>
-          <input ng-model="newCustomer.phone_number" type="tel" class="form-control" id="new-customer-phone-number" placeholder="(405) 867-5309">
+          <input ng-model="newPerson.phone_number" type="tel" class="form-control" id="new-customer-phone-number" placeholder="(405) 867-5309">
         </div>
-        <button ng-hide="editing" ng-click="createCustomer()" class="btn btn-success" type="submit"><i class="fa fa-plus"></i> Create</button>
-        <button ng-show="editing" ng-click="editCustomer()" class="btn btn-primary" type="submit"><i class="fa fa-save"></i> Save</button>
+        <button ng-hide="editing" ng-click="createPerson()" class="btn btn-success" type="submit"><i class="fa fa-plus"></i> Create</button>
+        <button ng-show="editing" ng-click="editPerson()" class="btn btn-primary" type="submit"><i class="fa fa-save"></i> Save</button>
         <a ng-click="toggleCreating()" class="btn btn-default">Back</a>
       </form>
 
@@ -42,17 +42,17 @@
             <td>Visit Count</td>
           </tr>
         </thead>
-        <tbody ng-repeat="customer in customers">
+        <tbody ng-repeat="person in persons">
           <tr>
             <td>
-              <a ng-click="delete(customer)" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i></a>
-              <a ng-click="showCustomerForm(customer)" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></a>
+              <a ng-click="delete(person)" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i></a>
+              <a ng-click="showPersonForm(person)" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></a>
             </td>
-            <td>{{customer.first_name}}</td>
-            <td>{{customer.last_name}}</td>
-            <td>{{customer.email}}</td>
-            <td>{{customer.phone_number}}</td>
-            <td>{{customer.visit_count}}</td>
+            <td>{{person.first_name}}</td>
+            <td>{{person.last_name}}</td>
+            <td>{{person.email}}</td>
+            <td>{{person.phone_number}}</td>
+            <td>{{person.visit_count}}</td>
           </tr>
         </tbody>
       </table>

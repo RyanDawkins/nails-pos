@@ -18,8 +18,7 @@
 //= require plugins/metisMenu/metisMenu.min.js
 //= require sb-admin-2.js
 //= require_self
-//= require site/customer.js
-//= require site/employee.js
+//= require site/person_controller.js
 //= require site/schedule.js
 
 var app = angular.module("Nails-Pos", []);
