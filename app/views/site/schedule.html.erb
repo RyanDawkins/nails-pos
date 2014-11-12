@@ -1,27 +1,15 @@
 <div id="content" class="container-fluid">
-  <div class="row-fluid">
-
-    <table class="table table-bordered table-square">
-      <thead>
-        <tr>
-          <td>10:00am</td>
-          <td>10:15am</td>
-          <td>10:30am</td>
-          <td>10:45am</td>
-          <td>11:00am</td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>A</td>
-          <td>A</td>
-          <td>A</td>
-          <td>A</td>
-          <td>A</td>
-        </tr>
-      </tbody>
+    <div ng-controller="ScheduleController">
+    <table class="friend">
+      <tr>
+        <th><a href="" ng-click="reverse=false;order('name', false)">Name</a>
+          (<a href="" ng-click="order('-name',false)">^</a>)</th>
+        <th><a href="" ng-click="reverse=!reverse;order('phone', reverse)">Phone Number</a></th>
+      </tr>
+      <tr ng-repeat="friend in friends">
+        <td>{{friend.name}}</td>
+        <td>{{friend.phone}}</td>
+      </tr>
     </table>
-
-
-  </div>
+    </div>
 </div>
