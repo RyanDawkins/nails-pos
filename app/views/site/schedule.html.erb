@@ -4,11 +4,18 @@
       <tr>
         <th><a href="" ng-click="reverse=false;order('name', false)">Name</a>
           (<a href="" ng-click="order('-name',false)">^</a>)</th>
-        <th><a href="" ng-click="reverse=!reverse;order('phone', reverse)">Phone Number</a></th>
+        <th><a href="" ng-click="reverse=false;order('phone', false)">Phone Number</a>
+          (<a href="" ng-click="order('-phone', false)">^</a>)</th>
+        <th><a href="" ng-click="reverse=false;order('date', false)">Date</a>
+          (<a href="" ng-click="order('-date',false)">^</a>)</th>
+        <th><a href="" ng-click="reverse=false;order('service', false)">Service</a>
+          (<a href="" ng-click="order('-service',false)">^</a>)</th>
       </tr>
       <tr ng-repeat="friend in friends">
         <td>{{friend.name}}</td>
         <td>{{friend.phone}}</td>
+        <td>{{friend.date}}</td>
+        <td>{{friend.service}}</td>
       </tr>
     </table>
     </div>
