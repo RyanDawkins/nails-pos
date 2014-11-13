@@ -18,5 +18,11 @@
 # Emacs temp files
 *~
 
-# Intellij files
-.idea
+# Ignore RubyMine files
+/.idea
+/scopes/scope_settings.xml
+encodings.xml
+misc.xml
+modules.xml
+nails-pos.iml
+vcs.xml
