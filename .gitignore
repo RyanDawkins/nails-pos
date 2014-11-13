@@ -15,6 +15,9 @@
 /log/*.log
 /tmp
 
+# Emacs temp files
+*~
+
 # Ignore RubyMine files
 /.idea
 /scopes/scope_settings.xml
