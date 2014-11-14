@@ -1,22 +1,49 @@
 <div id="content" class="container-fluid">
     <div ng-controller="ScheduleController">
-    <table class="friend">
-      <tr>
-        <th><a href="" ng-click="reverse=false;order('name', false)">Name</a>
-          (<a href="" ng-click="order('-name',false)">^</a>)</th>
-        <th><a href="" ng-click="reverse=false;order('phone', false)">Phone Number</a>
-          (<a href="" ng-click="order('-phone', false)">^</a>)</th>
-        <th><a href="" ng-click="reverse=false;order('date', false)">Date</a>
-          (<a href="" ng-click="order('-date',false)">^</a>)</th>
-        <th><a href="" ng-click="reverse=false;order('service', false)">Service</a>
-          (<a href="" ng-click="order('-service',false)">^</a>)</th>
-      </tr>
-      <tr ng-repeat="friend in friends">
-        <td>{{friend.name}}</td>
-        <td>{{friend.phone}}</td>
-        <td>{{friend.date}}</td>
-        <td>{{friend.service}}</td>
-      </tr>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>
+            <a href="#" ng-click="orderByField='firstName'; reverseSort = !reverseSort">
+              First Name <span ng-show="orderByField == 'firstName'"><span
+              ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+            </a>
+          </th>
+          <th>
+            <a href="#" ng-click="orderByField='lastName'; reverseSort = !reverseSort">
+              Last Name <span ng-show="orderByField == 'lastName'"><span
+              ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+            </a>
+          </th>
+          <th>
+            <a href="#" ng-click="orderByField='phone'; reverseSort = !reverseSort">
+              Phone <span ng-show="orderByField == 'phone'"><span
+              ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+            </a>
+          </th>
+          <th>
+            <a href="#" ng-click="orderByField='date'; reverseSort = !reverseSort">
+              Date <span ng-show="orderByField == 'date'"><span
+              ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+            </a>
+          </th>
+          <th>
+            <a href="#" ng-click="orderByField='service'; reverseSort = !reverseSort">
+              Services <span ng-show="orderByField == 'service'"><span
+              ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+            </a>
+          </th>
+        </tr>
+      <thead/>
+      <tbody>
+        <tr ng-repeat="schedule in data.schedules|orderBy:orderByField:reverseSort">
+          <td>{{schedule.firstName}}</td>
+          <td>{{schedule.lastName}}</td>
+          <td>{{schedule.phone}}</td>
+          <td>{{schedule.date}}</td>
+          <td>{{schedule.service}}</td>
+        </tr>
+      </tbody>
     </table>
     </div>
 </div>
