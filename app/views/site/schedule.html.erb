@@ -1,49 +1,69 @@
 <div id="content" class="container-fluid">
-    <div ng-controller="ScheduleController">
+  <div ng-controller="ScheduleController">
+
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th>
-            <a href="#" ng-click="orderByField='firstName'; reverseSort = !reverseSort">
-              First Name <span ng-show="orderByField == 'firstName'"><span
-              ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+          <td>
+            <a href="#" ng-click="toggleSort('firstName')">
+              First Name <span ng-show="orderByField == 'firstName'">
+                <i ng-show="!reverseSort" class="fa fa-chevron-down"></i>
+                <i ng-show="reverseSort" class="fa fa-chevron-up"></i>
+              </span>
             </a>
-          </th>
-          <th>
-            <a href="#" ng-click="orderByField='lastName'; reverseSort = !reverseSort">
-              Last Name <span ng-show="orderByField == 'lastName'"><span
-              ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+          </td>
+          <td>
+            <a href="#" ng-click="toggleSort('lastName')">
+              Last Name <span ng-show="orderByField == 'lastName'">
+                <i ng-show="!reverseSort" class="fa fa-chevron-down"></i>
+                <i ng-show="reverseSort" class="fa fa-chevron-up"></i>
+              </span>
             </a>
-          </th>
-          <th>
-            <a href="#" ng-click="orderByField='phone'; reverseSort = !reverseSort">
-              Phone <span ng-show="orderByField == 'phone'"><span
-              ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+          </td>
+          <td>
+            <a href="#" ng-click="toggleSort('phone')">
+              Phone <span ng-show="orderByField == 'phone'">
+                <i ng-show="!reverseSort" class="fa fa-chevron-down"></i>
+                <i ng-show="reverseSort" class="fa fa-chevron-up"></i>
+              </span>
             </a>
-          </th>
-          <th>
-            <a href="#" ng-click="orderByField='date'; reverseSort = !reverseSort">
-              Date <span ng-show="orderByField == 'date'"><span
-              ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+          </td>
+          <td>
+            <a href="#" ng-click="toggleSort('date')">
+              Time <span ng-show="orderByField == 'date'">
+                <i ng-show="!reverseSort" class="fa fa-chevron-down"></i>
+                <i ng-show="reverseSort" class="fa fa-chevron-up"></i>
+              </span>
             </a>
-          </th>
-          <th>
-            <a href="#" ng-click="orderByField='service'; reverseSort = !reverseSort">
-              Services <span ng-show="orderByField == 'service'"><span
-              ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+          </td>
+          <td>
+            <a href="#" ng-click="toggleSort('employee')">
+              Employee <span ng-show="orderByField == 'employee'">
+                <i ng-show="!reverseSort" class="fa fa-chevron-down"></i>
+                <i ng-show="reverseSort" class="fa fa-chevron-up"></i>
+              </span>
             </a>
-          </th>
+          </td>
+          <td>
+            <a href="#" ng-click="toggleSort('service')">
+              Services <span ng-show="orderByField == 'service'">
+                <i ng-show="!reverseSort" class="fa fa-chevron-down"></i>
+                <i ng-show="reverseSort" class="fa fa-chevron-up"></i>
+              </span>
+            </a>
+          </td>
         </tr>
-      <thead/>
-      <tbody>
-        <tr ng-repeat="schedule in data.schedules|orderBy:orderByField:reverseSort">
-          <td>{{schedule.firstName}}</td>
-          <td>{{schedule.lastName}}</td>
-          <td>{{schedule.phone}}</td>
+      </thead>
+      <tbody ng-init="fillTable()">
+        <tr ng-repeat="schedule in data|orderBy:orderByField:reverseSort">
+          <td>{{schedule.customer.first_name}}</td>
+          <td>{{schedule.customer.last_name}}</td>
+          <td>{{schedule.customer.phone_number}}</td>
           <td>{{schedule.date}}</td>
+          <td>{{schedule.employee.first_name}} {{schedule.employee.last_name}}</td>
           <td>{{schedule.service}}</td>
         </tr>
       </tbody>
     </table>
-    </div>
+  </div>
 </div>
