@@ -25,6 +25,7 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'font-awesome-sass', '~> 4.2.0'
 gem 'font-awesome-rails'
 gem 'angularjs-rails'
+gem 'twilio-ruby', '~> 3.12'
 gem 'mysql2'
 gem 'pg', '~>0.13.2'
 gem "codeclimate-test-reporter", group: :test, require: nil
