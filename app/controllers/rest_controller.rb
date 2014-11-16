@@ -4,7 +4,7 @@ class RestController < ApplicationController
 
   def index
     @objects = get_class().all
-    render json: @objects
+    render :json => @objects.to_json(:include => self.relations)
   end
 
   def show
@@ -49,6 +49,10 @@ class RestController < ApplicationController
         @object = nil
       end
     end
+  end
+
+  def relations
+    []
   end
 
   def error_message message

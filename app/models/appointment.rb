@@ -8,6 +8,7 @@ class Appointment < ActiveRecord::Base
     :allow_blank => false,
     :greater_than => 0
     }
+
   validates :employee_id, :numericality => {
     :only_integer => true,
     :allow_blank => false,
