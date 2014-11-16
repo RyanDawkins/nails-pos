@@ -1,11 +1,14 @@
 /* global app */
 app.controller('ScheduleController', function($scope, $http) {
   $scope.orderByField = 'date';
-  $scope.reverseSort = false;
+  $scope.descend = true;
 
   $scope.toggleSort = function(orderByField) {
+
+    // By De Morgan's Law
+    // $scope.descend = !(($scope.orderByField == orderByField) && $scope.descend);
+    $scope.descend = !($scope.orderByField == orderByField) || !$scope.descend;
     $scope.orderByField = orderByField;
-    $scope.reverseSort = !$scope.reverseSort;
   };
 
   $scope.data = {};

@@ -7,55 +7,55 @@
           <td>
             <a href="#" ng-click="toggleSort('firstName')">
               First Name <span ng-show="orderByField == 'firstName'">
-                <i ng-show="!reverseSort" class="fa fa-chevron-down"></i>
-                <i ng-show="reverseSort" class="fa fa-chevron-up"></i>
+                <i ng-show="descend" class="fa fa-chevron-down"></i>
+                <i ng-show="!descend" class="fa fa-chevron-up"></i>
               </span>
             </a>
           </td>
           <td>
             <a href="#" ng-click="toggleSort('lastName')">
               Last Name <span ng-show="orderByField == 'lastName'">
-                <i ng-show="!reverseSort" class="fa fa-chevron-down"></i>
-                <i ng-show="reverseSort" class="fa fa-chevron-up"></i>
+                <i ng-show="descend" class="fa fa-chevron-down"></i>
+                <i ng-show="!descend" class="fa fa-chevron-up"></i>
               </span>
             </a>
           </td>
           <td>
             <a href="#" ng-click="toggleSort('phone')">
               Phone <span ng-show="orderByField == 'phone'">
-                <i ng-show="!reverseSort" class="fa fa-chevron-down"></i>
-                <i ng-show="reverseSort" class="fa fa-chevron-up"></i>
+                <i ng-show="descend" class="fa fa-chevron-down"></i>
+                <i ng-show="!descend" class="fa fa-chevron-up"></i>
               </span>
             </a>
           </td>
           <td>
             <a href="#" ng-click="toggleSort('date')">
               Time <span ng-show="orderByField == 'date'">
-                <i ng-show="!reverseSort" class="fa fa-chevron-down"></i>
-                <i ng-show="reverseSort" class="fa fa-chevron-up"></i>
+                <i ng-show="descend" class="fa fa-chevron-down"></i>
+                <i ng-show="!descend" class="fa fa-chevron-up"></i>
               </span>
             </a>
           </td>
           <td>
             <a href="#" ng-click="toggleSort('employee')">
               Employee <span ng-show="orderByField == 'employee'">
-                <i ng-show="!reverseSort" class="fa fa-chevron-down"></i>
-                <i ng-show="reverseSort" class="fa fa-chevron-up"></i>
+                <i ng-show="descend" class="fa fa-chevron-down"></i>
+                <i ng-show="!descend" class="fa fa-chevron-up"></i>
               </span>
             </a>
           </td>
           <td>
             <a href="#" ng-click="toggleSort('service')">
               Services <span ng-show="orderByField == 'service'">
-                <i ng-show="!reverseSort" class="fa fa-chevron-down"></i>
-                <i ng-show="reverseSort" class="fa fa-chevron-up"></i>
+                <i ng-show="descend" class="fa fa-chevron-down"></i>
+                <i ng-show="!descend" class="fa fa-chevron-up"></i>
               </span>
             </a>
           </td>
         </tr>
       </thead>
       <tbody ng-init="fillTable()">
-        <tr ng-repeat="schedule in data|orderBy:orderByField:reverseSort">
+        <tr ng-repeat="schedule in data|orderBy:orderByField:!descend">
           <td>{{schedule.customer.first_name}}</td>
           <td>{{schedule.customer.last_name}}</td>
           <td>{{schedule.customer.phone_number}}</td>
