@@ -1,9 +1,9 @@
 class RestController < ApplicationController
 
   before_filter :find, :only => [:show, :update, :delete]
+  before_filter :all, :only => [:index]
 
   def index
-    @objects = get_class().all
     render :json => @objects.to_json(:include => self.relations)
   end
 
@@ -39,6 +39,10 @@ class RestController < ApplicationController
     else
       render json: error_message("We had a problem finding your customer")
     end
+  end
+
+  def all
+    @objects = get_class().all
   end
 
   def find
