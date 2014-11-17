@@ -1,12 +1,9 @@
-require 'twilio-ruby'
-
 module TwilioHelper
 	class TwillioBase
 		def self.createClient
 			@@client = Twilio::REST::Client.new ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
 		end
 	end
-
 	class TwillioSMS < TwillioBase
 		def self.sendSMS(recipient, content)
 			TwillioBase.createClient
