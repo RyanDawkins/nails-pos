@@ -1,5 +1,10 @@
 class AppointmentController < RestController
 
+  def index
+    appointments = JSON.parse(@objects.to_json(include: relations))
+    render json: {date: params[:date], appointments: appointments}
+  end
+
   protected
   def get_class
     Appointment
