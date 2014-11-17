@@ -1,6 +1,11 @@
 <div id="content" class="container-fluid">
-  <div ng-controller="ScheduleController">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-controller="ScheduleController">
 
+    <div id="date-picker" class="text-center">
+      <a ng-click="changeDay(-1)" class="btn btn-xs btn-primary">Previous <i class="fa fa-arrow-left"></i></a>
+      <span>{{date}}</span>
+      <a ng-click="changeDay(1)" class="btn btn-xs btn-primary">Next <i class="fa fa-arrow-right"></i></a>
+    </div>
     <table class="table table-bordered">
       <thead>
         <tr>
