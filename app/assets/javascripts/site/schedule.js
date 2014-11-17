@@ -21,7 +21,7 @@ app.controller('ScheduleController', function($scope, $http) {
 
     // By De Morgan's Law
     // $scope.descend = !(($scope.orderByField == orderByField) && $scope.descend);
-    $scope.descend = !($scope.orderByField == orderByField) || !$scope.descend;
+    $scope.descend = $scope.orderByField !== orderByField || !$scope.descend;
     $scope.orderByField = orderByField;
   };
 
