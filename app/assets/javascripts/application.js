@@ -19,6 +19,7 @@
 //= require sb-admin-2.js
 //= require_self
 //= require site/person_controller.js
+//= require site/customer_controller.js
 //= require site/schedule.js
 
 /*jshint unused:false */
